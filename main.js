@@ -35,7 +35,7 @@ function updateDisplay() {
     }
 }
 
-function roundNumber(number, decimalPlaces) { // round the number to the specified decimal places
+function roundNumber(number, decimalPlaces) { // round the number to the specified decimal places   
     return Number(number.toFixed(decimalPlaces));
 }
 
@@ -115,9 +115,19 @@ signButton.addEventListener("click", () => {
 });
 
 percentButton.addEventListener("click", () => {
-    console.log("%");
+    if (displayValue !== "") {
+        displayValue = displayValue / 100;
+        updateDisplay();
+    }
 });
 
 decimalButton.addEventListener("click", () => {
-    console.log(".");
+    if (displayValue === "") {
+        displayValue = "0.";
+        updateDisplay();
+        isNewNumber = false;
+    } else if (displayValue !== "" && displayValue.toString().indexOf(".") === -1) {
+        displayValue += ".";
+        updateDisplay();
+    }
 });
