@@ -9,6 +9,10 @@ body {
     font-family: monospace;
 }
 
+button {
+    border: none;
+}
+
 .calc-app {
     display: flex;
     align-items: center;
@@ -20,22 +24,33 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #333;
+    border:#000000 0.5rem solid;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons-row {
+    display: flex;
 }
 
 .display-input {
-    background-color: #333;
-    color: #fff;
+    background-color: #cdcdcd;
+    color: #000;
     font-size: 2rem;
-    padding: 1rem;
+    padding: 2rem;
     text-align: right;
     border: 0;
+    width: 100%;
 }
 
 .operand-btn, .decimal-btn {
     background-color: #333;
     color: #fff;
     font-size: 1.5rem;
-    padding: 1rem;
+    padding: 2rem;
     border: none;
     cursor: pointer;
 }
@@ -44,7 +59,7 @@ body {
     background-color: #7b7b7b;
     color: #fff;
     font-size: 1.5rem;
-    padding: 1rem;
+    padding: 2rem;
     border: none;
     cursor: pointer;
 }
@@ -53,7 +68,25 @@ body {
     background-color: #d9d9d9;
     color: #fff;
     font-size: 1.5rem;
-    padding: 1rem;
+    padding: 2rem;
     border: none;
     cursor: pointer;
+}
+
+.zero-decimal-container {
+    display: flex;
+    flex: 2;
+}
+
+.equals-btn {
+    flex: 0.29 !important;
+}
+
+.buttons button {
+    height: 6rem;
+    flex: 1;   
+}
+
+.buttons button:hover {
+    background-color: #555;
 }
