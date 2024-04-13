@@ -44,6 +44,10 @@ const decimalButton = document.querySelector('.decimal-btn');
 
 operandButtons.forEach((button) => {
     button.addEventListener("click", () => {
+        if (button.value === '0' && displayValue === "") {// if the user clicks 0 without entering any other number
+            return;
+        }
+        
         displayValue += button.value;
         updateDisplay();
     });
@@ -66,9 +70,6 @@ operatorButtons.forEach((button) => {
         displayValue = "";
     })
 });
-
-// firstnumber = 20
-// displayValue = 20
 
 equalsButton.addEventListener("click", () => {
     if (firstNumber === "" || operator === "") { // if the user clicks the equals button without entering a number or operator
