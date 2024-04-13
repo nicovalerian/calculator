@@ -19,4 +19,41 @@ body {
 .calc-wrapper {
     display: flex;
     flex-direction: column;
+    background-color: #333;
+}
+
+.display-input {
+    background-color: #333;
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem;
+    text-align: right;
+    border: 0;
+}
+
+.operand-btn, .decimal-btn {
+    background-color: #333;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.operator-btn, .equals-btn {
+    background-color: #7b7b7b;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.clear-btn, .sign-btn, .percent-btn {
+    background-color: #d9d9d9;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border: none;
+    cursor: pointer;
 }
