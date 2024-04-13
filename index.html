@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script defer src="main.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="calc-app">
-        
+      <div class="calc-wrapper">
+        <div class="top">
+          <div class="display">
+            <input type="text" class="display-input" value="0" disabled />
+          </div>
+        </div>
+        <div class="bottom">
+            <div class="buttons">
+                <div class="buttons-row">
+                    <button type="button" class="clear-btn" value="clear">AC</button>
+                    <button type="button" class="sign-btn" value="sign">+/-</button>
+                    <button type="button" class="percent-btn" value="percent">%</button>
+                    <button type="button" class="operator-btn" value="/">/</button>
+                </div>
+                <div class="buttons-row">
+                    <button type="button" class="operand-btn" value="7">7</button>
+                    <button type="button" class="operand-btn" value="8">8</button>
+                    <button type="button" class="operand-btn" value="9">9</button>
+                    <button type="button" class="operator-btn" value="*">*</button>
+                </div>
+                <div class="buttons-row">
+                    <button type="button" class="operand-btn" value="4">4</button>
+                    <button type="button" class="operand-btn" value="5">5</button>
+                    <button type="button" class="operand-btn" value="6">6</button>
+                    <button type="button" class="operator-btn" value="-">-</button>
+                </div>
+                <div class="buttons-row">
+                    <button type="button" class="operand-btn" value="1">1</button>
+                    <button type="button" class="operand-btn" value="2">2</button>
+                    <button type="button" class="operand-btn" value="3">3</button>
+                    <button type="button" class="operator-btn" value="+">+</button>
+                </div>
+                <div class="buttons-row">
+                    <button type="button" class="operand-btn" id="zero-btn" value="0">0</button>
+                    <button type="button" class="decimal-btn" value=".">.</button>
+                    <button type="button" class="equals-btn" value="=">=</button>
+                </div>
+            </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
