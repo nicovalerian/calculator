@@ -90,3 +90,7 @@ button {
 .buttons button:hover {
     background-color: #555;
 }
+
+.buttons button:active {
+    background-color: #444;
+}
