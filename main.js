@@ -26,6 +26,9 @@ function updateDisplay() {
     if (displayValue === "Cannot divide by zero") {
         display.value = "Cannot divide by zero";
         displayValue = "";
+    } else if (displayValue === "Invalid operator") {
+        display.value = "Invalid operator";
+        displayValue = "";
     } else { 
         display.value = displayValue;
     }
@@ -48,16 +51,35 @@ operandButtons.forEach((button) => {
 
 operatorButtons.forEach((button) => {
     button.addEventListener("click", () => {
+        if (firstNumber === "" && displayValue === "") { // if the user clicks an operator without entering a number
+            return;
+        }
+
+        if (operator !== "") { // if the user clicks an operator after entering the first number and operator}
+            secondNumber = displayValue;
+            displayValue = operate(operator, Number(firstNumber), Number(secondNumber));
+            updateDisplay();
+        }
+
         firstNumber = displayValue;
         operator = button.value;
         displayValue = "";
     })
 });
 
+// firstnumber = 20
+// displayValue = 20
+
 equalsButton.addEventListener("click", () => {
+    if (firstNumber === "" || operator === "") { // if the user clicks the equals button without entering a number or operator
+        return;
+    }
+
     secondNumber = displayValue;
+    console.log(Number(firstNumber), operator, Number(secondNumber));
     displayValue = operate(operator, Number(firstNumber), Number(secondNumber));
     updateDisplay();
+    operator = "";
 });
 
 // logic (default):
@@ -75,7 +97,14 @@ equalsButton.addEventListener("click", () => {
 // 12. the displayValue is then displayed on the calculator screen using the updateDisplay function
 
 clearButton.addEventListener("click", () => {
-    console.log("AC");
+    // clear the display and reset the variables
+    displayValue = "";
+    firstNumber = "";
+    secondNumber = "";
+    operator = "";
+    
+    const display = document.querySelector('.display-input');
+    display.value = "0";
 });
 
 signButton.addEventListener("click", () => {
