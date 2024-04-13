@@ -35,6 +35,10 @@ function updateDisplay() {
     }
 }
 
+function roundNumber(number, decimalPlaces) { // round the number to the specified decimal places
+    return Number(number.toFixed(decimalPlaces));
+}
+
 const operandButtons = document.querySelectorAll(".operand-btn");
 const operatorButtons = document.querySelectorAll('.operator-btn');
 const equalsButton = document.querySelector('.equals-btn');
@@ -68,7 +72,7 @@ operatorButtons.forEach((button) => {
 
         if (operator !== "") { // if the user clicks an operator after entering the first number and operator}
             secondNumber = displayValue;
-            displayValue = operate(operator, Number(firstNumber), Number(secondNumber));
+            displayValue = roundNumber(operate(operator, Number(firstNumber), Number(secondNumber)), 4);
             updateDisplay();
         }
 
@@ -86,7 +90,7 @@ equalsButton.addEventListener("click", () => {
 
     secondNumber = displayValue;
     console.log(Number(firstNumber), operator, Number(secondNumber));
-    displayValue = operate(operator, Number(firstNumber), Number(secondNumber));
+    displayValue = roundNumber(operate(operator, Number(firstNumber), Number(secondNumber)), 4);
     updateDisplay();
     operator = "";
     isNewNumber = true;
